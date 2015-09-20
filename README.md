@@ -1,7 +1,7 @@
 # ccontent
 A module for basic content management in Anax-MVC
 
-Requires CDatabase to work (mos/cdatabase).
+Requires CDatabase to work (mos/cdatabase) [https://github.com/mosbth/cdatabase](https://github.com/mosbth/cdatabase).
 
 ## Getting started
 
