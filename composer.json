@@ -1,0 +1,23 @@
+{
+    "name": "meax/ccontent",    
+    "type": "library",
+    "description": "Classes for Content Managment in Anax-MVC",
+    "keywords": ["php", "cms", "education"],
+    "homepage": "http://mariajonsson.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maria Jonsson",
+            "email": "maria@mariajonsson.com",
+            "homepage": "http://mariajonsson.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "mos/cdatabase": dev-master,
+    },
+    "autoload": {
+        "psr-4": { "Meax\\": "src/" }
+    }
+}
