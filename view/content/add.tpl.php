@@ -3,7 +3,7 @@
 <fieldset>
 
 <p>
-<label>Title</label>
+<label>Title*</label>
 <br/>
 <input type='text' name='title' required='required'/>
 
@@ -11,20 +11,20 @@
 <p>
 <label>URL</label>
 <br/>
-<input type='text' name='url' required='required'/>
+<input type='text' name='url'/>
 
 </p>
 <p>
-<label>Slug</label>
+<label>Slug*</label>
 <br/>
 <input type='text' name='slug' required='required'/>
 </p>
 <p>
-<label>Content</label><br/>
+<label>Content*</label><br/>
 <textarea name='data' required='required'></textarea>
 </p>
 <p>
-<label>Name</label>
+<label>Name*</label>
 <br/>
 <input type='text' name='acronym' required='required'/>
 </p>
@@ -34,7 +34,7 @@
 <p>Available filters: link, markdown, bbcode, nl2br. Enter filters as string, separated by commas.</p>
 </p>
 <p>
-<label>Type</label>
+<label>Type*</label>
 <br/>
 <select name='type' required='required'>
 <option value='blog' selected>blog</option>
