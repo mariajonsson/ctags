@@ -3,11 +3,19 @@ A module for basic content management in Anax-MVC
 
 Requires CDatabase to work (mos/cdatabase) [https://github.com/mosbth/cdatabase](https://github.com/mosbth/cdatabase).
 
+To install with Composer and Packagist, add cdatabase and ccontent to your composer.json file in Anax. 
+
+    "require": {
+        "php": ">=5.4",
+        "meax/ccontent": "dev-master",
+        "mos/cdatabase": "dev-master"
+    },
+    
+Before you can use CContent the database need to be configured, look at the CDatabase documentation.
+
 ## Getting started
 
-Move the example file `basiccontent.php` to your Anax-MVC webroot folder to try the module. The package includes view templates needed by the `basiccontent.php` file. Move the files from  `cdatabase\view\content` to `app\view\content` in Anax-MVC. 
-
-Before you can use CContent the database need to be configured, look at the CDatabase documentation.
+Move the example file `basiccontent.php` to your Anax-MVC webroot folder to try the module. The package also includes view templates needed by the `basiccontent.php` file. You need to move the files from  `cdatabase\view\content` to `app\view\content` in Anax-MVC. 
 
 ### `ContentBasicController()`
 `basiccontent.php` demonstrates some of the methods of the controller `ContentBasicController()`:  
@@ -18,5 +26,5 @@ Before you can use CContent the database need to be configured, look at the CDat
 
 Before you can see contents or add new contents you need to set up the database with `setupPopulateAction` or `setupAction`. 
 
-There is also functionality to view a single content post and to edit a post.
+There is also functionality to view a single content post, `idAction($id)` and to edit a post `updateAction($id)`.
 
