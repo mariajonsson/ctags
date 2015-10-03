@@ -1,5 +1,5 @@
-# ccontent
-A module for basic content management in Anax-MVC
+# ctags
+A module for tags in Anax-MVC
 
 Requires CDatabase to work (mos/cdatabase) [https://github.com/mosbth/cdatabase](https://github.com/mosbth/cdatabase).
 
@@ -7,11 +7,11 @@ To install with Composer and Packagist, add cdatabase and ccontent to your compo
 
     "require": {
         "php": ">=5.4",
-        "meax/ccontent": "dev-master",
+        "meax/ctags": "dev-master",
         "mos/cdatabase": "dev-master"
     },
     
-Before you can use CContent the database need to be configured, look at the CDatabase documentation.
+Before you can use Tags the database need to be configured, look at the CDatabase documentation.
 
 ## Getting started
 

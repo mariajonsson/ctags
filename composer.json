@@ -1,7 +1,7 @@
 {
-    "name": "meax/ccontent",    
+    "name": "meax/ctags",    
     "type": "library",
-    "description": "Classes for Content Managment in Anax-MVC",
+    "description": "Classes for Tags in Anax-MVC",
     "keywords": ["php", "cms", "education"],
     "homepage": "http://mariajonsson.com",
     "license": "MIT",
