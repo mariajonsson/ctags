@@ -15,9 +15,9 @@ Before you can use Tags the database need to be configured, look at the CDatabas
 
 ## Getting started
 
-Move the example file `basiccontent.php` to your Anax-MVC webroot folder to try the module. The package also includes view templates needed by the `basiccontent.php` file. You need to move the files from  `cdatabase\view\content` to `app\view\content` in Anax-MVC. 
+Move the example file `basictags.php` to your Anax-MVC webroot folder to try the module. The package also includes view templates needed by the `basictags.php` file. You need to move the files from  `cdatabase\view\tags` to `app\view\tags` in Anax-MVC. 
 
-### `ContentBasicController()`
+### `TagBasicController()`
 `basiccontent.php` demonstrates some of the methods of the controller `ContentBasicController()`:  
 
 * Setup database with test data, `setupPopulateAction()`
