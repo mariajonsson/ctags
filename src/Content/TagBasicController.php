@@ -32,7 +32,7 @@ public function listAction()
     $all = $this->content->findAll();
     
     $this->theme->setTitle("Content");
-    $this->views->add('content/list-all', [
+    $this->views->add('tags/list-all', [
         'content' => $all,
         'title' => "All content",
     ], 'main');
@@ -52,7 +52,7 @@ public function idAction($id = null)
     $post = $this->content->find($id);
  
     $this->theme->setTitle("Content");
-    $this->views->add('content/view', [
+    $this->views->add('tags/view', [
         'post' => $post,
     ], 'main');
 
@@ -69,7 +69,7 @@ public function addAction()
 {
 
     $this->di->theme->setTitle("Add content");
-    $this->di->views->add('content/add', [
+    $this->di->views->add('tags/add', [
         'title' => "Add content",
              
         ], 'main');
@@ -141,7 +141,7 @@ public function updateAction($id = null)
     $published = $content->getProperties()['published'];
     
     $this->di->theme->setTitle("Edit content");
-    $this->di->views->add('content/edit', [
+    $this->di->views->add('tags/edit', [
         'header' => "Edit content",
         'title' => $title,
         'url' => $url,
@@ -241,7 +241,7 @@ public function publishedAction()
         ->execute();
  
     $this->theme->setTitle("Published content");
-    $this->views->add('content/list-all', [
+    $this->views->add('tags/list-all', [
         'content' => $all,
         'title' => "Published content",
     ], 'main');
@@ -261,7 +261,7 @@ public function unpublishedAction()
         ->execute();
  
     $this->theme->setTitle("Unpublished content");
-    $this->views->add('content/list-all', [
+    $this->views->add('tags/list-all', [
         'content' => $all,
         'title' => "Unpublished content",
     ], 'main');
@@ -281,7 +281,7 @@ public function discardedAction()
         ->execute();
  
     $this->theme->setTitle("Trash");
-    $this->views->add('content/list-deleted', [
+    $this->views->add('tags/list-deleted', [
         'users' => $all,
         'title' => "Trash",
     ], 'main');
@@ -307,17 +307,8 @@ public function setupContentAction()
         'tagbasic',
         [
             'id' => ['integer', 'primary key', 'not null', 'auto_increment'],
-            'title' => ['varchar(100)', 'not null'],
-            'slug' => ['varchar(100)', 'unique'],
-            'url' => ['varchar(100)', 'unique'],
-            'type' => ['varchar(80)'],
-            'data' => ['text'],
-            'filter' => ['varchar(80)'],
-            'acronym' => ['varchar(20)'],
-            'created' => ['datetime'],
-            'updated' => ['datetime'],
-            'deleted' => ['datetime'],
-            'published' => ['datetime'],
+            'title' => ['varchar(20)', 'not null', 'unique'],
+            'slug' => ['varchar(25)', 'not null', 'unique']
         ]
     )->execute();
     
@@ -336,42 +327,23 @@ public function setupContentAction()
 
     $this->db->insert(
         'tagbasic',
-        ['title', 'slug', 'type', 'data', 'filter', 'acronym', 'created', 'published']
+        ['title', 'slug']
     );
  
-    $now = date('Y-m-d H:i:s');
- 
+
     $this->db->execute([
-        'Welcome',
-        'welcome',
-        'blog',
-        'Welcome to my test page.',
-        'md',
-        'user',
-        $now,
-        $now
+        'Drawing',
+        'drawing'
     ]);
  
     $this->db->execute([
-        'A test',
-        'a-test',
-        'blog',
-        'This is just a test.',
-        'md',
-        'user',
-        $now,
-        $now
+        'Painting',
+        'painting'
      ]);
      
      $this->db->execute([
-        'Draft',
-        'draft',
-        'blog',
-        'This is an unpublished draft.',
-        'md',
-        'user',
-        $now,
-        null
+        'Tools',
+        'tools'
      ]);
      
          
