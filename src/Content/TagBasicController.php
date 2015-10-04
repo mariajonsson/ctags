@@ -101,7 +101,7 @@ public function postFormAction()
     
     if ($saved) {
       $this->dispatcher->forward([
-        'controller' => 'content-basic',
+        'controller' => 'tag-basic',
         'action'     => 'list',
         //'params'     => [],
       ]);
@@ -174,7 +174,7 @@ public function deleteAction($id = null)
  
     $res = $this->content->delete($id);
  
-    $url = $this->url->create('content-basic/list');
+    $url = $this->url->create('tag-basic/list');
     $this->response->redirect($url);
 }
 
@@ -199,7 +199,7 @@ public function undoDeleteAction($id = null)
     $content->deleted = null;
     $content->save();
  
-    $url = $this->url->create('content-basic/id/' . $id);
+    $url = $this->url->create('tag-basic/id/' . $id);
     $this->response->redirect($url);
 }
 
@@ -224,7 +224,7 @@ public function softDeleteAction($id = null)
     $content->deleted = $now;
     $content->save();
  
-    $url = $this->url->create('content-basic/id/' . $id);
+    $url = $this->url->create('tag-basic/id/' . $id);
     $this->response->redirect($url);
 }
 
@@ -301,10 +301,10 @@ public function setupContentAction()
 
     $this->db->setVerbose();
  
-    $this->db->dropTableIfExists('contentbasic')->execute();
+    $this->db->dropTableIfExists('tagbasic')->execute();
  
     $this->db->createTable(
-        'contentbasic',
+        'tagbasic',
         [
             'id' => ['integer', 'primary key', 'not null', 'auto_increment'],
             'title' => ['varchar(100)', 'not null'],
@@ -335,7 +335,7 @@ public function setupContentAction()
     
 
     $this->db->insert(
-        'contentbasic',
+        'tagbasic',
         ['title', 'slug', 'type', 'data', 'filter', 'acronym', 'created', 'published']
     );
  
@@ -385,9 +385,8 @@ public function setupContentAction()
     $this->autoPopulateAction();
     
     $this->dispatcher->forward([
-        'controller' => 'content-basic',
+        'controller' => 'tag-basic',
         'action'     => 'list',
-        //'params'     => [],
     ]);
     
   
