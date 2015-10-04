@@ -308,8 +308,8 @@ public function setupContentAction()
         'tagbasic',
         [
             'id' => ['integer', 'primary key', 'not null', 'auto_increment'],
-            'title' => ['varchar(20)', 'not null', 'unique'],
-            'slug' => ['varchar(25)', 'not null', 'unique']
+            'tagname' => ['varchar(20)', 'not null', 'unique'],
+            'tagslug' => ['varchar(25)', 'not null', 'unique']
         ]
     )->execute();
     
