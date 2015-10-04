@@ -328,7 +328,7 @@ public function setupContentAction()
 
     $this->db->insert(
         'tagbasic',
-        ['title', 'slug']
+        ['tagname', 'tagslug']
     );
  
 
