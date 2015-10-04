@@ -53,6 +53,7 @@ public function idAction($id = null)
  
     $this->theme->setTitle("Content");
     $this->views->add('tags/view', [
+        'controller' => 'tag-basic',
         'post' => $post,
     ], 'main');
 
